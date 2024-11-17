@@ -18,10 +18,9 @@ const getUnsepnd = async (address, findCover = false, utxos_filter) => {
         script: getScriptHash(address),
       };
     });
-
     if (utxos_filter) {
       const FilteredData = DataToSend.filter((a) =>
-        findCover === true ? a.amount === 1000036 : a.amount
+        findCover === true ? a.amount === 0.0100036 * 1e8 : a.amount
       );
       return FilteredData.length === 0
         ? responseModel.error("utxos Not found")
