@@ -21,7 +21,7 @@ const getUnsepnd = async (address, findCover = false, utxos_filter) => {
 
     if (utxos_filter) {
       const FilteredData = DataToSend.filter((a) =>
-        findCover === true ? a.amount === 100036 : a.amount > 1500000
+        findCover === true ? a.amount === 1000036 : a.amount
       );
       return FilteredData.length === 0
         ? responseModel.error("utxos Not found")
